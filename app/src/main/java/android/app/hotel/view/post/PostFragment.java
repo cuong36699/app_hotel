@@ -1,7 +1,7 @@
 package android.app.hotel.view.post;
 
 import android.app.hotel.adapter.PostAdapter;
-import android.app.hotel.model.room.Post;
+import android.app.hotel.model.post.Post;
 import android.app.hotel.presenter.PostPresenter;
 import android.content.Intent;
 import android.os.Bundle;
@@ -51,25 +51,23 @@ public class PostFragment extends Fragment implements PostView{
         lvPost.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                for (int x=0; x<lvPost.getAdapter().getCount() ; x++){
-                    if(position == x){
-                        Toast.makeText(view.getContext(),"gia tri da~ nhan la " + (x+1), Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getActivity(),PostItent.class);
-                        String Image = Objects.requireNonNull(postAdapter.getItem(position).getImage());
-                        String Title = Objects.requireNonNull(postAdapter.getItem(position).getTitle());
-                        String Admin = Objects.requireNonNull(postAdapter.getItem(position).getAdmin());
-                        String Ago = Objects.requireNonNull(postAdapter.getItem(position).getAgo());
-                        String Tag = Objects.requireNonNull(postAdapter.getItem(position).getTag());
-                        String DescriptionLong = Objects.requireNonNull(postAdapter.getItem(position).getLongDescription());
+                for (int x = 0; x < lvPost.getAdapter().getCount(); x++) {
 
-                        intent.putExtra("Image", Image.toString());
-                        intent.putExtra("Title", Title.toString());
-                        intent.putExtra("Admin", Admin.toString());
-                        intent.putExtra("Ago", Ago.toString());
-                        intent.putExtra("Tag", Tag.toString());
-                        intent.putExtra("DescriptionLong", DescriptionLong.toString());
-                        startActivity(intent);
-                    }
+                    Intent intent = new Intent(getActivity(), PostItent.class);
+                    String Image = Objects.requireNonNull(postAdapter.getItem(position).getImage());
+                    String Title = Objects.requireNonNull(postAdapter.getItem(position).getTitle());
+                    String Admin = Objects.requireNonNull(postAdapter.getItem(position).getAdmin());
+                    String Ago = Objects.requireNonNull(postAdapter.getItem(position).getAgo());
+                    String Tag = Objects.requireNonNull(postAdapter.getItem(position).getTag());
+                    String DescriptionLong = Objects.requireNonNull(postAdapter.getItem(position).getLongDescription());
+
+                    intent.putExtra("Image", Image.toString());
+                    intent.putExtra("Title", Title.toString());
+                    intent.putExtra("Admin", Admin.toString());
+                    intent.putExtra("Ago", Ago.toString());
+                    intent.putExtra("Tag", Tag.toString());
+                    intent.putExtra("DescriptionLong", DescriptionLong.toString());
+                    startActivity(intent);
                 }
             }
         });

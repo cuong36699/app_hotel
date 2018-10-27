@@ -14,13 +14,18 @@
         <activity
             android:name=".view.MainActivity"
             android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name=".view.OpenApp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.post.PostItent"></activity>
+
+        <activity android:name=".view.post.PostItent" />
+
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package android.app.hotel.service;
+package android.app.hotel.service.post;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
